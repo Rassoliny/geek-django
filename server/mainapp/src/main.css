@@ -1,0 +1,196 @@
+.container {
+    width: 1366px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    font-family: sans-serif;
+    padding-left: 98px;
+    padding-right: 98px;
+}
+
+.header {
+    display: flex;
+    background-color: #2a2a2a;
+    height: 5%;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 50px;
+    padding-left:10px; 
+}
+
+.menu {
+    list-style-type: none;  
+    display: flex;
+    position: relative;
+    right: 10px;
+}
+
+.menu li{
+    border: 1px #eaeaea;
+    width: 100px;
+    display: flex;
+}
+
+.menu a {
+    color: grey;
+    font-size: 20px;     
+}
+
+.menu a:hover{
+    color: red;
+}
+
+.product_page_heading {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #eaeaea;
+}
+
+.product_page_short_text {
+    color: #707070;
+    font-size: 14px;
+    font-style: italic;  
+    line-height: 16px;  
+}
+
+.product_page_full_text {
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.product_page_full_text::first-letter {
+    color: red;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: inherit;
+}
+
+
+.product_page_characters {
+    color: gray;
+    font-size: 15px;
+}
+
+.product_page_characters li:before{
+    content: " ";
+    width: 20px;
+    height: 20px;
+    display:inline-block;
+    background-image: url(img/icon_flower.png);
+}
+
+.product_page_characters li {
+    list-style-type: none;
+}
+
+form li{
+    list-style: none;
+}
+
+
+.email input {
+    color: blue;
+}
+
+input {
+    width: 200px;
+    height: 30px;
+    color: #707070;
+    font-size: 15px;
+}
+
+input:first-child {
+    color: blue;
+}
+
+.product_page_img img{
+    border: 7px solid gray;    
+}
+
+.product_page_img img:hover{
+    border: 7px solid transparent;
+}
+
+.product_chararters {
+    padding-top:10px;
+}
+
+.product_chararters tr td {
+    border:  1px solid #484343 ;
+    text-align: center;
+}
+
+button {
+    width: 100px;
+    height: 25px;
+}
+
+button:hover{
+    background-color: green;
+    color: white;
+}
+
+.main_area {
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+.footer {
+    background-color: #905BAE;
+    height: 50px;
+    width: 100%;
+    color: white;  
+    position: relative; 
+    text-align: right;
+}
+
+.footer p {
+    padding-top: 15px;
+    padding-right: 20px;
+}
+
+.product_short_information {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.product_short_information_text {
+    padding: 10px;
+}
+
+.button_buy {
+    position: relative;
+    top: 30%;
+    text-align: center;
+}
+
+.button_buy button {
+    height: 50px;
+    width: 150px;
+    background-color: lightslategray;
+    color:white;
+}
+
+.button_buy button:hover {
+    background-color: royalblue;
+    color: yellow;
+}
+
+.product_catalog img{
+    height: 300px;
+}
+
+
+.product_catalog ul {
+    list-style: none ;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
