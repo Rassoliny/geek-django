@@ -26,4 +26,6 @@ urlpatterns = [
     re_path(r'^index', mainapp.main),
     re_path(r'^catalog', mainapp.catalog),
     re_path(r'^contacts', mainapp.contacts),
+    re_path(r'^mirrow', mainapp.product_mirrow),
+    re_path(r'^box', mainapp.product_box),
 ]

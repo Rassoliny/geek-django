@@ -14,3 +14,11 @@ def catalog(request):
 
 def contacts(request):
     return render(request, 'contacts.html', {})
+
+
+def product_mirrow(request):
+    return render(request, 'products/mirrow.html', {})
+
+
+def product_box(request):
+    return render(request, 'products/box.html', {})
