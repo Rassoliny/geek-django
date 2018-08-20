@@ -7,7 +7,6 @@ from django.shortcuts import HttpResponse
 def main(request):
     return render(request, 'index.html', {})
 
-
 def catalog(request):
     return render(request, 'catalog.html', {})
 

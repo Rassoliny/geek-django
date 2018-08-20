@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import re_path
-# from mainapp.views import mysite
+from django.conf.urls.static import static
+from django.conf import settings
 import mainapp.views as mainapp
+
 
 
 urlpatterns = [
@@ -28,4 +30,4 @@ urlpatterns = [
     re_path(r'^contacts', mainapp.contacts),
     re_path(r'^mirrow', mainapp.product_mirrow),
     re_path(r'^box', mainapp.product_box),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
