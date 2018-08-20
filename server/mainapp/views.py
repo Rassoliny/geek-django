@@ -1,11 +1,12 @@
 from django.shortcuts import render
-
+from . import models
 # Create your views here.
 from django.shortcuts import HttpResponse
 
 
 def main(request):
-    return render(request, 'index.html', {})
+    query = models.Product.objects.all()
+    return render(request, 'index.html', {'results': query})
 
 def catalog(request):
     return render(request, 'catalog.html', {})
