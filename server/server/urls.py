@@ -24,10 +24,10 @@ import mainapp.views as mainapp
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^$', mainapp.main),
-    re_path(r'^index', mainapp.main),
-    re_path(r'^catalog', mainapp.catalog),
-    re_path(r'^contacts', mainapp.contacts),
-    re_path(r'^mirrow', mainapp.product_mirrow),
-    re_path(r'^box', mainapp.product_box),
+    re_path(r'^$', mainapp.main, name='main'),
+    # re_path(r'^index', mainapp.main, name=''),
+    re_path(r'^catalog', mainapp.catalog, name='catalog'),
+    re_path(r'^contacts', mainapp.contacts, name='contacts'),
+    re_path(r'^mirrow', mainapp.product_mirrow, name='mirrow'),
+    re_path(r'^box', mainapp.product_box, name='box'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
