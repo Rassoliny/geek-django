@@ -1,30 +1,15 @@
+{% extends 'base.html' %}
+
+
 {% load static %}
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Каталог</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/main.css' %}" />
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">
-            <a href="/"><img src="{% static 'img/logo.jpg' %}" alt="KoVa"></a>
-            </div>
-            <ul class="menu">
-                <li><a href="/">Главная</a></li>
-                <li><a href="{% url 'catalog' %}">Каталог</a></li>
-                <li><a href="{% url 'contacts' %}">Контакты</a></li>
-            </ul>   
-        </div>   
-    <hr>
-    <div class="main_area"> 
-        <h2>Каталог</h2>
+{% block page_title %}
+Каталог
+{% endblock %}
+
+{% block page_content %}
+ <h2>Каталог</h2>
         <div class="product_catalog">
             <ul>
                 <li>
@@ -40,15 +25,6 @@
                             ><br>
                         Зеркало</a><br>
                         </li>
-            </ul>  
+            </ul>
         </div>
-    </div>
-    <hr>
-        <div class="footer">
-            <p> <i>Все права защищены. &copy;</i></p>
-        </div>
-    
-    </div>
-    
-</body>
-</html>
+{% endblock %}
