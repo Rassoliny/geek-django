@@ -15,11 +15,7 @@
             <div class="logo">
             <a href="/"><img src="{% static 'img/logo.jpg' %}" alt="KoVa"></a>
             </div>
-            <ul class="menu">
-                <li><a href="/">Главная</a></li>
-                <li><a href="{% url 'catalog' %}">Каталог</a></li>
-                <li><a href="{% url 'contacts' %}">Контакты</a></li>
-            </ul>
+            {% include 'includes/menu.html' %}
         </div>
         <hr>
         <div class="main_area">
