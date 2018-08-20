@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block page_title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href=" {% static 'css/main.css' %}" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+            <a href="/"><img src="{% static 'img/logo.jpg' %}" alt="KoVa"></a>
+            </div>
+            <ul class="menu">
+                <li><a href="/">Главная</a></li>
+                <li><a href="{% url 'catalog' %}">Каталог</a></li>
+                <li><a href="{% url 'contacts' %}">Контакты</a></li>
+            </ul>
+        </div>
+        <hr>
+        <div class="main_area">
+            {% block page_content %}{% endblock %}
+        </div>
+        <hr>
+        <div class="footer">
+            <p><i>Все права защищены. &copy;</i></p>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
