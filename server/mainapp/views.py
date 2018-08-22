@@ -5,11 +5,11 @@ from django.shortcuts import HttpResponse
 
 
 def main(request):
-    query = models.Product.objects.all()
-    return render(request, 'index.html', {'results': query})
+    return render(request, 'index.html', {})
 
 def catalog(request):
-    return render(request, 'catalog.html', {})
+    query = models.Product.objects.all()
+    return render(request, 'catalog.html', {'results': query})
 
 
 def contacts(request):
