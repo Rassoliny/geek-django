@@ -29,6 +29,9 @@ class Product(models.Model):
 
     modifield = models.DateTimeField(auto_now=True)
 
+    # category = models.ForeignKey('categories.Category', on_delete=models.CASCADE)
+
+
     def __str__(self):
 
         return self.title
