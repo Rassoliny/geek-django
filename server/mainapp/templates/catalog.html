@@ -9,24 +9,8 @@
 {% endblock %}
 
 {% block page_content %}
- <h2>Каталог</h2>
-        <div class="product_catalog">
-            <ul>
-                <li>
-                    <a href="box.html">
-                        <img src="static/img/box.jpg"
-                            alt="Коробка"
-                            ><br>
-                        Коробка</a><br>
-                </li>
-                <li><a href="mirrow.html">
-                        <img src="static/img/mirrow.jpg"
-                            alt="Зеркало"
-                            ><br>
-                        Зеркало</a><br>
-                        </li>
-            </ul>
-        </div>
+<h2>Каталог</h2>
+
 <div class="product_catalog">
             <ul>
                 {% for itm in results %}
