@@ -1,0 +1,21 @@
+ <a href="{% url 'detail' pk=itm.id %}">
+
+        <div class="product__image">
+                <img class="inner" src="/media/{{ itm.image }}" alt="">
+            </div>
+        
+            <div class="product__title">
+                <h2 class="inner">
+                    {{ itm.title }}
+                </h2>
+            </div>
+        
+            <div class="product__cost {% if itm.is_new %} new {% endif %}">
+                <span class="inner">
+                    {{ itm.cost }}
+                </span>
+            </div>
+
+ </a>
+
+
