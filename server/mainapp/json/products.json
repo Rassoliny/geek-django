@@ -1,0 +1,18 @@
+[
+  {
+    "title": "box1",
+    "category": "ready",
+    "cost": 3000
+  },
+
+  {
+    "title": "box2",
+    "category": "need_to_work",
+    "cost": 6000
+  },
+  {
+    "title": "mirrow1",
+    "category": "ready",
+    "cost": 12000
+  }
+]

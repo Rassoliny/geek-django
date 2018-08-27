@@ -7,4 +7,4 @@ import json, os
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        super_user = ShopUser.objects.create_superuser('adm', 'adm@kovashop.local', 'qwe123', age = 25)
+        super_user = ShoUser.objects.create_superuser('adm', 'adm@kovashop.local', 'qwe123', age = 25)
