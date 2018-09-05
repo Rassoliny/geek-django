@@ -9,22 +9,25 @@
 {% endblock %}
 
 {% block page_content %}
- <h2>Каталог</h2>
-        <div class="product_catalog">
+<h2>Каталог</h2>
+
+<div class="product_catalog">
+
             <ul>
+                {% for itm in results %}
+
                 <li>
-                    <a href="box.html">
-                        <img src="static/img/box.jpg"
-                            alt="Коробка"
+                    <a href="{% url 'contacts' %}"></a>
+
+                        <a href="{% url 'detail' pk=itm.id %}">
+                        <img src="/media/{{ itm.image }}"
+                            alt="{{ itm.title }}"
                             ><br>
-                        Коробка</a><br>
+                        {{ itm.title }}</a><br>
                 </li>
-                <li><a href="mirrow.html">
-                        <img src="static/img/mirrow.jpg"
-                            alt="Зеркало"
-                            ><br>
-                        Зеркало</a><br>
-                        </li>
+                {% endfor %}
+
             </ul>
         </div>
+
 {% endblock %}

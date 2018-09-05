@@ -1,0 +1,22 @@
+ <a href="{% url 'detail' pk=itm.id %}">
+
+     <h2> {{ itm.title }}</h2>
+    <div class="product_short_information">
+        <div class="product_short_information_image">
+            <img class="inner" src="/media/{{ itm.image }}" alt="{{ itm.title }}" height="300">
+        </div>
+        <div class="product_short_information_text">
+            <h3 class="product_page_heading">Описание товара:</h3>
+            <p  class="product_page_short_text">{{ itm.short_description }}</p>
+            <div class="button_buy">
+                <button type="button_buy">Купить</button>
+            </div>
+        </div>
+    </div>
+        <h3 class="product_page_heading">Характеристики товара</h3>
+        <ul class="product_page_characters">
+            <li>Размер 50 * 50 см.</li>
+            <li>Материал:  дерево + стекло.</li>
+        </ul>
+        <h3 class="product_page_heading">Подробное описание товара</h3>
+        <p class="product_page_full_text">{{ itm.description }} </p>
