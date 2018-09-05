@@ -11,6 +11,7 @@ class ProductCategory(models.Model):
         return self.name
 
 class Product(models.Model):
+    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
     title = models.CharField(max_length=150)
     image = models.ImageField(blank=True, null=True)
     cost = models.DecimalField(max_digits=7, decimal_places=2)

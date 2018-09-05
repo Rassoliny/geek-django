@@ -14,13 +14,13 @@ def loadFromJSON(file_name):
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        categories = loadFromJSON('categories')
-
-        ProductCategory.objects.all().delete()
-        for category in categories:
-            print (category)
-            new_category = ProductCategory(**category)
-            new_category.save()
+        # categories = loadFromJSON('categories')
+        #
+        # ProductCategory.objects.all().delete()
+        # for category in categories:
+        #     print (category)
+        #     new_category = ProductCategory(**category)
+        #     new_category.save()
 
         products = loadFromJSON('products')
 
@@ -31,5 +31,5 @@ class Command(BaseCommand):
             product['category'] = _category
             new_product = Product(**product)
             new_product.save()
-
-        # super_user = ShoUser.objects.create_superuser('adm', 'adm@kovashop.local', 'qwe123', age = 25)
+        #
+#         # super_user = ShopUser.objects.create_superuser('adm', 'adm@kovashop.local', 'qwe123', age = 25)
