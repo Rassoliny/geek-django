@@ -11,12 +11,14 @@ def loadFromJSON(file_name):
     with open(os.path.join(JSON_PATH, file_name + '.json'), 'r') as infile:
         return json.load(infile)
 
+
 class Command(BaseCommand):
     def handle(self, *args, **options):
         categories = loadFromJSON('categories')
 
         ProductCategory.objects.all().delete()
         for category in categories:
+            print (category)
             new_category = ProductCategory(**category)
             new_category.save()
 
