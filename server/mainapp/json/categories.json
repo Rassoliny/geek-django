@@ -1,0 +1,12 @@
+[
+  {
+    "name":"ready",
+    "description":"Готовы к продаже"
+  },
+
+  {
+    "name":"need_to_work",
+    "description":"Требуется создать"
+  }
+
+]

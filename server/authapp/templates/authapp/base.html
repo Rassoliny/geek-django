@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block page_title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" media="screen" href=" {% static 'css/main.css' %}" />
+
+</head>
+<body>
+        <div class="container">
+            <div class="header">
+                <div class="logo">
+                <a href="/"><img src="{% static 'img/logo.jpg' %}" alt="KoVa"></a>
+                </div>
+            </div>
+            <div class="login">
+                <div class="h2 text-center head">
+                    Вход в систему
+                </div>
+
+                {% block content %}
+
+                {% endblock %}
+            </div>
+        </div>
+
+</body>
+</html>
