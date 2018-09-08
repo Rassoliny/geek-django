@@ -1,0 +1,25 @@
+{% extends 'mainapp/base.html' %}
+
+{% load static %}
+
+{% block page_title %}
+KoVa Shop
+{% endblock %}
+
+{% block page_content %}
+<h2>KoVa Shop</h2>
+<p>Привет всем на новом сайте изделий декора ручной работы!</p>
+    {% for product in products %}
+    <div class="block">
+        <a href="#">
+            <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
+            <div class="text">
+                <h3>{{ product.category.name }}</h3>
+                <h4>{{ product.title }}</h4>
+                <p>{{ product.description }}</p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+
+{% endblock %}
