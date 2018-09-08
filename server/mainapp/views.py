@@ -5,8 +5,10 @@ from django.shortcuts import HttpResponse
 
 
 def main(request):
-    query = models.Product.objects.all()
-    return render(request, 'mainapp/index.html', {'results': query})
+    products = models.Product.objects.all()[:4]
+
+    content = {'products': products}
+    return render(request, 'mainapp/index.html', content)
 
 def catalog(request):
     query = models.Product.objects.all()
