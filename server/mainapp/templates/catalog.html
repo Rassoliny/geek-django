@@ -12,10 +12,13 @@
 <h2>Каталог</h2>
 
 <div class="product_catalog">
+
             <ul>
                 {% for itm in results %}
 
                 <li>
+                    <a href="{% url 'contacts' %}"></a>
+
                         <a href="{% url 'detail' pk=itm.id %}">
                         <img src="/media/{{ itm.image }}"
                             alt="{{ itm.title }}"

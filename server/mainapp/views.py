@@ -5,12 +5,12 @@ from django.shortcuts import HttpResponse
 
 
 def main(request):
-    return render(request, 'index.html', {})
+    query = models.Product.objects.all()
+    return render(request, 'index.html', {'results': query})
 
 def catalog(request):
     query = models.Product.objects.all()
     return render(request, 'catalog.html', {'results': query})
-
 
 def contacts(request):
     return render(request, 'contacts.html', {})
@@ -23,9 +23,6 @@ def product_mirrow(request):
 def product_box(request):
     return render(request, 'products/box.html', {})
 
-
 def product_detail(request, pk):
-
     instance = models.Product.objects.get(id=pk)
-
     return render(request, 'products/detail.html', {'instance': instance})
