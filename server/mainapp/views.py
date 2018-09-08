@@ -6,19 +6,17 @@ from django.shortcuts import HttpResponse
 
 def main(request):
     query = models.Product.objects.all()
-    return render(request, 'index.html', {'results': query})
+    return render(request, 'mainapp/index.html', {'results': query})
 
 def catalog(request):
     query = models.Product.objects.all()
-    return render(request, 'catalog.html', {'results': query})
+    return render(request, 'mainapp/catalog.html', {'results': query})
 
 def contacts(request):
-    return render(request, 'contacts.html', {})
-
+    return render(request, 'mainapp/contacts.html', {})
 
 def product_mirrow(request):
     return render(request, 'products/mirrow.html', {})
-
 
 def product_box(request):
     return render(request, 'products/box.html', {})
