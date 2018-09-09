@@ -13,13 +13,13 @@
 
 <div class="product_catalog">
 
+
+
             <ul>
                 {% for itm in results %}
 
                 <li>
-                    <a href="{% url 'contacts' %}"></a>
-
-                        <a href="{% url 'detail' pk=itm.id %}">
+                     <a href="{% url 'detail' pk=itm.id %}">
                         <img src="/media/{{ itm.image }}"
                             alt="{{ itm.title }}"
                             ><br>

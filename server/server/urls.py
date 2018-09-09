@@ -30,8 +30,8 @@ urlpatterns = [
     re_path(r'^contacts', mainapp.contacts, name='contacts'),
     re_path(r'^mirrow', mainapp.product_mirrow, name='mirrow'),
     re_path(r'^box', mainapp.product_box, name='box'),
-    # re_path(r'(?P<pk>\d+)', mainapp.product_detail, name='detail'),
-    re_path(r'^auth', include('authapp.urls')),
     re_path(r'^products', include('mainapp.urls', namespace='products')),
+    re_path(r'(?P<pk>\d+)', mainapp.product_detail, name='detail'),
+    re_path(r'^auth', include('authapp.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
