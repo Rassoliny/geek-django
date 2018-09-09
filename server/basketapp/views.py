@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from .models import Basket
-from server.mainapp.models import Product
+from mainapp.models import Product
 # Create your views here.
 
 def basket(request):
