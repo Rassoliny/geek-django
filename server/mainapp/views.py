@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from . import models
+from basketapp.models import Basket
 # Create your views here.
 from django.shortcuts import HttpResponse
 
@@ -33,6 +34,10 @@ def products(request, pk):
     title = 'Продукты'
     links_menu = models.ProductCategory.objects.all()
 
+    basket = []
+    if request.user.is_authenticated:
+        basket = Basket.objects.filter(user=request.user)
+
     if pk:
         if pk == '0':
             category = {'name': 'все'}
@@ -46,6 +51,7 @@ def products(request, pk):
             'links_menu': links_menu,
             'category': category,
             'products': products,
+            'basket': basket,
         }
 
         return render(request, 'mainapp/products_list.html', content)
