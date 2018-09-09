@@ -31,6 +31,7 @@ urlpatterns = [
     re_path(r'^mirrow', mainapp.product_mirrow, name='mirrow'),
     re_path(r'^box', mainapp.product_box, name='box'),
     re_path(r'^products', include('mainapp.urls', namespace='products')),
+    re_path(r'^basket', include('basketapp.urls', namespace='basket')),
     re_path(r'(?P<pk>\d+)', mainapp.product_detail, name='detail'),
     re_path(r'^auth', include('authapp.urls')),
 
