@@ -16,7 +16,7 @@
                 <a href="{% url 'auth:login' %}">Войти</a>
             {% endif %}
         </li>
-    <li><a href="{% url 'basket:view' %}" class="basket">
+    <li><a href="{% url 'basket:view' %}" class="basket">Корзина
         <span>
             {% if basket %}
             {{ basket.0.total_cost|floatformat:0 }} руб

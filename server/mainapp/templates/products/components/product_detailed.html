@@ -8,7 +8,9 @@
             <h3 class="product_page_heading">Описание товара:</h3>
             <p  class="product_page_short_text">{{ itm.short_desc }}</p>
             <div class="button_buy">
-                <button type="button_buy">Купить</button>
+                <a href="{% url 'basket:add' pk=itm.id %}">
+                    <button type="button_buy">Купить</button>
+                </a>
             </div>
         </div>
     </div>
