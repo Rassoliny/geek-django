@@ -56,10 +56,6 @@ def get_same_products(hot_product):
 def products(request, pk=None):
     title = 'Продукты'
     links_menu = models.ProductCategory.objects.all()
-    basket = get_basket(request.user)
-
-    if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
 
     if pk:
         if pk == '0':
@@ -74,7 +70,6 @@ def products(request, pk=None):
             'links_menu': links_menu,
             'category': category,
             'products': products,
-            'basket': basket,
         }
 
         return render(request, 'mainapp/products_list.html', content)
@@ -88,7 +83,6 @@ def products(request, pk=None):
         'links_menu': links_menu,
         'hot_product': hot_product,
         'same_products': same_products,
-        'basket': basket,
 
     }
 
