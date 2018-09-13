@@ -39,6 +39,10 @@ def logout(request):
 def edit(request):
     title = 'Редактирование'
 
+
+    if request.method == 'GET':
+        edit_form = ShopUserEditForm(request.GET, request.FILES, instance=request.user)
+
     if request.method == 'POST':
         edit_form = ShopUserEditForm(request.POST, request.FILES, instance=request.user)
 
