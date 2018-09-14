@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from authapp.model import ShopUser
-from mainapp.model import ProductCategory, Product
+from authapp.models import ShopUser
+from mainapp.models import ProductCategory, Product
 
 
 # Create your views here.
