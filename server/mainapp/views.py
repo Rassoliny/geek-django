@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from . import models
 from basketapp.models import Basket
 import random
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 from django.shortcuts import HttpResponse
 
@@ -53,23 +54,34 @@ def get_same_products(hot_product):
     return same_products
 
 
-def products(request, pk=None):
+def products(request, pk=None, page=1):
     title = 'Продукты'
-    links_menu = models.ProductCategory.objects.all()
+    links_menu = models.ProductCategory.objects.filter(is_active=True)
 
     if pk:
         if pk == '0':
-            category = {'name': 'все'}
-            products = models.Product.objects.all().order_by('cost')
+            category = {
+                'pk': 0,
+                'name': 'все'
+            }
+            products = models.Product.objects.filter(is_active=True, category__is_active=True).order_by('cost')
         else:
             category = get_object_or_404(models.ProductCategory, pk=pk)
-            products = models.Product.objects.filter(category__pk=pk).order_by('cost')
+            products = models.Product.objects.filter(category__pk=pk, is_active=True, category__is_active=True
+                                                     ).order_by('cost')
 
+        paginator = Paginator(products, 2)
+        try:
+            products_paginator = paginator.page(page)
+        except PageNotAnInteger:
+            products_paginator = paginator.page(1)
+        except EmptyPage:
+            products_paginator = paginator.page(paginator.num_pages)
         content = {
             'title': title,
             'links_menu': links_menu,
             'category': category,
-            'products': products,
+            'products': products_paginator
         }
 
         return render(request, 'mainapp/products_list.html', content)

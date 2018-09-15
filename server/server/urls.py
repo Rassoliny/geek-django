@@ -23,6 +23,7 @@ import mainapp.views as mainapp
 
 
 urlpatterns = [
+
     # path('admin/', admin.site.urls),
     re_path(r'^$', mainapp.main, name='main'),
     re_path(r'^catalog', mainapp.catalog, name='catalog'),
