@@ -106,7 +106,7 @@ def category_delete(request, pk):
 def products(request, pk):
     title = 'admin/products'
     category = get_object_or_404(ProductCategory, pk=pk)
-    products_list = Product.objects.filter(category__pk=pk).order_by('name')
+    products_list = Product.objects.filter(category__pk=pk).order_by('title')
 
     content = {
         'title': title,
@@ -115,7 +115,7 @@ def products(request, pk):
 
     }
 
-    return render(request, 'adminapp/categories.html', content)
+    return render(request, 'adminapp/products.html', content)
 
 
 def product_create(request, pk):

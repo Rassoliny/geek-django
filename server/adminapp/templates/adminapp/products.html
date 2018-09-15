@@ -10,7 +10,7 @@
 		
 		{% for object in objects %}
 			<div class="product_record {% if not object.is_active %}not_active{% endif %}">
-				<img src="{{ object.image|default:'products_images/default.jpg' }}" alt="{{ object.name }}">
+				<img src="{{ object.image|default:'products_images/default.jpg' }}" alt="{{ object.title }}">
 				<div class="product_name">
 					{{ object.name|title }}
 				</div>
@@ -27,7 +27,7 @@
 				</div>
 				<div class="summary">
 					<b>цена</b>
-					<p>{{ object.price }} руб</p>
+					<p>{{ object.cost }} руб</p>
 					<b>количество</b>
 					<p>{{ object.quantity }}</p>
 				</div>
@@ -35,6 +35,8 @@
 					{{ object.short_desc|title }}
 				</div>
 			</div>
+			<br>
+			<hr>
 		{% endfor%}
 	</div>
 {% endblock %}
