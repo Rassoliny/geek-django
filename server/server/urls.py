@@ -30,6 +30,7 @@ urlpatterns = [
     re_path(r'^products', include('mainapp.urls', namespace='products')),
     re_path(r'^basket', include('basketapp.urls', namespace='basket')),
     re_path(r'^product/(?P<pk>\d+)', mainapp.product_detail, name='detail'),
+    re_path(r'^auth/verify/google/oauth2/', include("social_django.urls", namespace="social")),
     re_path(r'^auth', include('authapp.urls')),
     re_path(r'^admin/', include('adminapp.urls', namespace='admin')),
 
