@@ -10,7 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os, json
+import os
+from .constants import GOOGLE_OAUTH2_KEY, GOOGLE_OAUTH2_SECRET
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -157,12 +158,5 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
 )
 
-# with open('server/google_plus.json', 'r') as f:
-#     GOOGLE_PLUS = json.load(f)
-#
-#
-# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = GOOGLE_PLUS['client_id']
-# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = GOOGLE_PLUS['client_secret']
-#
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'xxx'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'xxxx'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = GOOGLE_OAUTH2_KEY
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = GOOGLE_OAUTH2_SECRET
