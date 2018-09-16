@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os
+import os, json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -152,15 +152,17 @@ EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = 'tmp/email-messages/'
 
 
-AUTHENTICATION_BACKENDS = {
+AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'social_core.backends.google.GoogleOAuth2',
-}
+)
 
-SOCIAL_AUTH_URL_NAMESPACE = 'social'
-
-with open('server/google_plus.json', 'r') as f:
-    GOOGLE_PLUS = json.load(f)
-
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = GOOGLE_PLUS['SOCIAL_AUTH_GOOGLE_OAUTH2_KEY']
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = GOOGLE_PLUS['SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET']
+# with open('server/google_plus.json', 'r') as f:
+#     GOOGLE_PLUS = json.load(f)
+#
+#
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = GOOGLE_PLUS['client_id']
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = GOOGLE_PLUS['client_secret']
+#
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'xxx'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'xxxx'
