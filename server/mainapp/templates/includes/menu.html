@@ -5,7 +5,7 @@
     {% if user.is_authenticated %}
         <li>
             <a href="{% url 'auth:edit' %}">
-                {{ user.first_name|default:'Пользователь' }}
+                {{ user.first_name|default:'USER' }}
             </a>
         </li>
     {% endif %}
