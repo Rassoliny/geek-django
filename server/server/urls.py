@@ -33,5 +33,6 @@ urlpatterns = [
     re_path(r'^auth/verify/google/oauth2/', include("social_django.urls", namespace="social")),
     re_path(r'^auth', include('authapp.urls')),
     re_path(r'^admin/', include('adminapp.urls', namespace='admin')),
+    re_path(r'^order/', include('ordersapp.urls', namespace='order')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

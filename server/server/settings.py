@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-from .constants import GOOGLE_OAUTH2_KEY, GOOGLE_OAUTH2_SECRET
+# from .constants import GOOGLE_OAUTH2_KEY, GOOGLE_OAUTH2_SECRET
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'basketapp',
     'adminapp',
     'social_django',
+    'ordersapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -158,5 +159,5 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
 )
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = GOOGLE_OAUTH2_KEY
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = GOOGLE_OAUTH2_SECRET
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = GOOGLE_OAUTH2_KEY
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = GOOGLE_OAUTH2_SECRET
