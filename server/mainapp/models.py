@@ -28,6 +28,7 @@ class Product(models.Model):
     cost = models.DecimalField(max_digits=7, decimal_places=2)
     short_desc = models.CharField(verbose_name='краткое описание', max_length=200, blank=True)
     description = models.TextField(verbose_name='подбробное описание', blank=True)
+    quantity = models.PositiveIntegerField(verbose_name='количество на складе', default=0)
     publicated = models.CharField(
         max_length=3,
         choices=PUBLICATED_CHOICES,
