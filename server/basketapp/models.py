@@ -27,3 +27,7 @@ class Basket(models.Model):
         return _totalcost
 
     total_cost = property(_get_total_cost)
+
+    @staticmethod
+    def get_items(user):
+        return user.basket_set.all()
